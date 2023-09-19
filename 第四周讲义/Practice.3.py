@@ -28,6 +28,8 @@ self 不是 python 关键字，我们把他换成 runoob 也是可以正常执�
 """
 
 print("\n现在开始实现一个栈\n")
+
+
 # 以下开始实现一个栈
 class Stack():
     def __init__(self):
@@ -50,11 +52,13 @@ class Stack():
             return self.__items.pop()
         except:
             print("ERROR: Stack is empty now!")
+
     def peek(self):
         try:
             return self.__items[-1]
         except:
             print("ERROR: Stack is empty now!")
+
 
 s = Stack()
 s.push(1)
