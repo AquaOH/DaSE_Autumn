@@ -22,19 +22,19 @@ class CrossRiver:
         else:
             return False
 
-    def move(self, state, path):
+    def move(self, state):
         if state == (1, 1, 1, 1):
             # 找到了解决方案
-            print("找到解决方案：", path)
+            print("找到解决方案：", self.visited)
             return
         for moves in self.movement:
             new_state = tuple(state[i] + moves[i] for i in range(4))
             if self.is_legal(new_state) and self.is_not_visited(new_state):
                 self.visited.add(new_state)
-                self.move(new_state, path + [new_state])
+                self.move(new_state)
                 self.visited.remove(new_state)
 
 
 state = (0, 0, 0, 0,)
 mycrossriver = CrossRiver()
-mycrossriver.move(state, [state])
+mycrossriver.move(state)
